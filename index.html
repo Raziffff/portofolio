@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Muhamad Razif Akbar — Data Analyst & Information Systems Graduate. Mengolah data menjadi insight yang bermakna untuk mendukung pengambilan keputusan." />
+  <meta name="keywords" content="Data Analyst, Data Management, SQL, Python, Power BI, Tableau, Portfolio, Sistem Informasi" />
+  <meta name="author" content="Muhamad Razif Akbar" />
+  <meta property="og:title" content="Muhamad Razif Akbar | Data Analyst" />
+  <meta property="og:description" content="Turning Data Into Insight — Portfolio of Muhamad Razif Akbar" />
+  <meta property="og:type" content="website" />
+  <title>Muhamad Razif Akbar | Data Analyst</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/utils.css" />
+</head>
+<body>
+
+  <!-- ===== CANVAS BACKGROUND ===== -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- ===== CURSOR ===== -->
+  <div class="cursor-dot" id="cursor-dot"></div>
+  <div class="cursor-outline" id="cursor-outline"></div>
+
+  <!-- ===== LOADER ===== -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-text">
+        <span class="loader-bracket">[</span>
+        <span class="loader-code" id="loader-code">initializing</span>
+        <span class="loader-bracket">]</span>
+      </div>
+      <div class="loader-bar">
+        <div class="loader-progress" id="loader-progress"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <span class="logo-bracket">&lt;</span>
+        <span class="logo-name">Razif</span>
+        <span class="logo-bracket">/&gt;</span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
+        <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+        <li><a href="#experience" class="nav-link" data-section="experience">Experience</a></li>
+        <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+        <li><a href="#education" class="nav-link" data-section="education">Education</a></li>
+        <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+          <span class="theme-icon sun">☀️</span>
+          <span class="theme-icon moon">🌙</span>
+        </button>
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section id="home" class="hero-section">
+    <div class="hero-content">
+      <div class="hero-tag reveal-up">
+        <span class="tag-dot"></span>
+        <span>Available for opportunities</span>
+      </div>
+      <h1 class="hero-name reveal-up">
+        Muhamad<br />
+        <span class="gradient-text">Razif Akbar</span>
+      </h1>
+      <div class="hero-role reveal-up">
+        <span class="role-prefix">I am a&nbsp;</span>
+        <span class="typing-text" id="typing-text"></span>
+        <span class="typing-cursor">|</span>
+      </div>
+      <p class="hero-tagline reveal-up">
+        <span class="tagline-highlight">Turning Data Into Insight</span><br />
+        Lulusan Sistem Informasi dengan IPK 3.83 yang passionate dalam analisis data, pengelolaan database, dan pengolahan informasi untuk mendukung pengambilan keputusan berbasis data.
+      </p>
+      <div class="hero-cta reveal-up">
+        <a href="#experience" class="btn btn-primary">
+          <span>Lihat Pengalaman</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#contact" class="btn btn-ghost">Hubungi Saya</a>
+      </div>
+      <div class="hero-stats reveal-up">
+        <div class="stat-item">
+          <span class="stat-num" data-count="3">0</span>
+          <span class="stat-label">Internships</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-count="383">0</span>
+          <span class="stat-label">GPA (/400)</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-count="7">0</span>
+          <span class="stat-label">Hard Skills</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual reveal-right">
+      <div class="hero-card-wrapper">
+        <div class="hero-card">
+          <div class="card-header">
+            <div class="card-dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <span class="card-filename">data_analysis.py</span>
+          </div>
+          <div class="card-code">
+            <div class="code-line"><span class="code-import">import</span> <span class="code-module">pandas</span> <span class="code-import">as</span> <span class="code-module">pd</span></div>
+            <div class="code-line"><span class="code-import">import</span> <span class="code-module">numpy</span> <span class="code-import">as</span> <span class="code-module">np</span></div>
+            <div class="code-line"><span class="code-import">from</span> <span class="code-module">sklearn</span> <span class="code-import">import</span> <span class="code-func">preprocessing</span></div>
+            <div class="code-line">&nbsp;</div>
+            <div class="code-line"><span class="code-comment"># Load & validate data</span></div>
+            <div class="code-line"><span class="code-var">df</span> = pd.<span class="code-func">read_csv</span>(<span class="code-str">'dataset.csv'</span>)</div>
+            <div class="code-line"><span class="code-var">df</span>.<span class="code-func">dropna</span>(<span class="code-var">inplace</span>=<span class="code-module">True</span>)</div>
+            <div class="code-line">&nbsp;</div>
+            <div class="code-line"><span class="code-comment"># EDA — explore trends</span></div>
+            <div class="code-line"><span class="code-var">summary</span> = <span class="code-var">df</span>.<span class="code-func">describe</span>()</div>
+            <div class="code-line"><span class="code-var">corr</span> = <span class="code-var">df</span>.<span class="code-func">corr</span>()</div>
+            <div class="code-line"><span class="code-func">print</span>(<span class="code-str">f'Records: <span class="code-var">{len(df)}</span>'</span>)</div>
+          </div>
+          <div class="card-output">
+            <span class="output-label">Output:</span>
+            <span class="output-text typewriter-output" id="output-text">Records: 48,291 ✓</span>
+          </div>
+        </div>
+        <!-- Floating badges -->
+        <div class="float-badge badge-python">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" width="22" height="22" />
+          Python
+        </div>
+        <div class="float-badge badge-tensorflow">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="SQL" width="22" height="22" />
+          SQL
+        </div>
+        <div class="float-badge badge-ml">
+          <span>📊</span> Power BI
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section id="about" class="about-section section">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">01. About</span>
+        <h2 class="section-title">Who Am <span class="gradient-text">I?</span></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-image-wrapper reveal-left">
+          <div class="about-image-frame">
+            <div class="about-avatar">
+              <img src="assets/images/razif.jpg" alt="Muhamad Razif Akbar" class="avatar-photo" />
+              <div class="avatar-glow"></div>
+            </div>
+            <div class="about-image-deco deco-1"></div>
+            <div class="about-image-deco deco-2"></div>
+          </div>
+          <div class="about-social">
+            <a href="https://github.com/Raziffff" target="_blank" rel="noopener" class="social-btn" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/razif-akbar/" target="_blank" rel="noopener" class="social-btn" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="mailto:muhamadrazifakbar@gmail.com" class="social-btn" aria-label="Email">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="about-content reveal-right">
+          <div class="about-text">
+            <p>Halo! Saya <strong>Muhamad Razif Akbar</strong>, lulusan Program Studi Sistem Informasi dengan minat kuat dalam bidang analisis data, pengolahan informasi, dan pemecahan masalah berbasis teknologi.</p>
+            <p>Saya memiliki kemampuan dalam <span class="highlight">pengelolaan dan validasi data</span>, <span class="highlight">analisis statistik</span>, serta penyusunan laporan secara sistematis. Berpengalaman melalui kegiatan magang, proyek akademik, dan berbagai pelatihan di bidang data.</p>
+            <p>Saat ini berfokus mengembangkan kompetensi di bidang <span class="highlight">Data Analysis</span> dan <span class="highlight">Data Management</span> untuk menghasilkan informasi yang akurat dan mendukung pengambilan keputusan.</p>
+          </div>
+          <div class="about-details">
+            <div class="detail-item">
+              <span class="detail-icon">🎓</span>
+              <div>
+                <span class="detail-label">Education</span>
+                <span class="detail-value">S1 Sistem Informasi — Gunadarma</span>
+              </div>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">📍</span>
+              <div>
+                <span class="detail-label">Location</span>
+                <span class="detail-value">Jakarta Selatan, DKI Jakarta</span>
+              </div>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">📧</span>
+              <div>
+                <span class="detail-label">Email</span>
+                <span class="detail-value">muhamadrazifakbar@gmail.com</span>
+              </div>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">🚀</span>
+              <div>
+                <span class="detail-label">Status</span>
+                <span class="detail-value status-available">Open to Work</span>
+              </div>
+            </div>
+          </div>
+          <a href="https://www.linkedin.com/in/razif-akbar/" target="_blank" rel="noopener" class="btn btn-primary">
+            <span>LinkedIn Profile</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCE SECTION ===== -->
+  <section id="experience" class="experience-section section">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">02. Experience</span>
+        <h2 class="section-title">Riwayat <span class="gradient-text">Pekerjaan</span></h2>
+      </div>
+      <div class="timeline">
+
+        <!-- Job 3 — Trans Entertainment -->
+        <div class="timeline-item reveal-up">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div class="timeline-title-group">
+                <h3 class="timeline-role">Data Validation Internship</h3>
+                <span class="timeline-company">Trans Entertainment</span>
+              </div>
+              <div class="timeline-meta">
+                <span class="timeline-period">Juni 2026 – Oktober 2026</span>
+                <span class="timeline-location">📍 Jakarta Selatan</span>
+              </div>
+            </div>
+            <ul class="timeline-duties">
+              <li>Melakukan verifikasi dan validasi data untuk memastikan kelengkapan dan keakuratan informasi.</li>
+              <li>Melakukan pengecekan silang (cross-check) dan mengidentifikasi data yang tidak sesuai atau duplikat.</li>
+              <li>Memperbarui dan merapikan data berdasarkan hasil validasi untuk menjaga kualitas database.</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="proj-tag">Data Validation</span>
+              <span class="proj-tag">Excel</span>
+              <span class="proj-tag">Data Quality</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Job 2 — Perbarindo -->
+        <div class="timeline-item reveal-up" style="--delay: 0.1s">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div class="timeline-title-group">
+                <h3 class="timeline-role">IT Auditor Internship</h3>
+                <span class="timeline-company">Perbarindo</span>
+              </div>
+              <div class="timeline-meta">
+                <span class="timeline-period">September 2025 – Februari 2026</span>
+                <span class="timeline-location">📍 Jakarta Pusat</span>
+              </div>
+            </div>
+            <ul class="timeline-duties">
+              <li>Menyusun dokumen Standard Operating Procedure (SOP) IT untuk memastikan standarisasi operasional pada sisi klien.</li>
+              <li>Melakukan audit dan verifikasi kelengkapan dokumen teknis serta administrasi secara detail guna menjamin kepatuhan data.</li>
+              <li>Melakukan rekonsiliasi data dan pengecekan silang (cross-check) dokumen klien untuk meminimalisir risiko kesalahan informasi.</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="proj-tag">IT Audit</span>
+              <span class="proj-tag">SOP Documentation</span>
+              <span class="proj-tag">Data Reconciliation</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Job 1 — Sintesa Law Office -->
+        <div class="timeline-item reveal-up" style="--delay: 0.2s">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div class="timeline-title-group">
+                <h3 class="timeline-role">Data Entry Internship</h3>
+                <span class="timeline-company">PT Sintesa Law Office</span>
+              </div>
+              <div class="timeline-meta">
+                <span class="timeline-period">Maret 2025 – Mei 2025</span>
+                <span class="timeline-location">📍 Jakarta Selatan</span>
+              </div>
+            </div>
+            <ul class="timeline-duties">
+              <li>Memasukkan dan memperbarui data agen yang terlibat somasi ke dalam format Excel dan Word secara akurat.</li>
+              <li>Membuat dan mengirimkan laporan harian secara tepat waktu kepada tim hukum.</li>
+              <li>Melakukan verifikasi dan validasi data untuk mendeteksi duplikasi atau kesalahan input guna menjamin kualitas Master Database.</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="proj-tag">Data Entry</span>
+              <span class="proj-tag">Excel</span>
+              <span class="proj-tag">Word</span>
+              <span class="proj-tag">Database Management</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS SECTION ===== -->
+  <section id="skills" class="skills-section section">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">03. Skills</span>
+        <h2 class="section-title">My <span class="gradient-text">Arsenal</span></h2>
+      </div>
+      <div class="skills-grid">
+
+        <!-- Hard Skills -->
+        <div class="skills-category reveal-up">
+          <h3 class="category-title">
+            <span class="cat-icon">⚡</span> Hard Skills (Programming)
+          </h3>
+          <div class="skill-bars">
+            <div class="skill-bar-item" data-percent="80">
+              <div class="skill-info">
+                <span class="skill-name">Python</span>
+                <span class="skill-percent">80%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill" style="--target: 80%"></div></div>
+            </div>
+            <div class="skill-bar-item" data-percent="78">
+              <div class="skill-info">
+                <span class="skill-name">SQL</span>
+                <span class="skill-percent">78%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill" style="--target: 78%"></div></div>
+            </div>
+            <div class="skill-bar-item" data-percent="70">
+              <div class="skill-info">
+                <span class="skill-name">HTML &amp; CSS</span>
+                <span class="skill-percent">70%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill" style="--target: 70%"></div></div>
+            </div>
+            <div class="skill-bar-item" data-percent="65">
+              <div class="skill-info">
+                <span class="skill-name">JavaScript</span>
+                <span class="skill-percent">65%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill" style="--target: 65%"></div></div>
+            </div>
+            <div class="skill-bar-item" data-percent="60">
+              <div class="skill-info">
+                <span class="skill-name">PHP</span>
+                <span class="skill-percent">60%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill" style="--target: 60%"></div></div>
+            </div>
+            <div class="skill-bar-item" data-percent="55">
+              <div class="skill-info">
+                <span class="skill-name">Golang</span>
+                <span class="skill-percent">55%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill" style="--target: 55%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Software Skills -->
+        <div class="skills-category reveal-up" style="--delay: 0.1s">
+          <h3 class="category-title">
+            <span class="cat-icon">🛠️</span> Software Skills
+          </h3>
+          <div class="skill-bars">
+            <div class="skill-bar-item" data-percent="90">
+              <div class="skill-info">
+                <span class="skill-name">Microsoft Office</span>
+                <span class="skill-percent">90%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill" style="--target: 90%"></div></div>
+            </div>
+            <div class="skill-bar-item" data-percent="80">
+              <div class="skill-info">
+                <span class="skill-name">SQL Management Studio</span>
+                <span class="skill-percent">80%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill" style="--target: 80%"></div></div>
+            </div>
+            <div class="skill-bar-item" data-percent="75">
+              <div class="skill-info">
+                <span class="skill-name">Power BI</span>
+                <span class="skill-percent">75%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill" style="--target: 75%"></div></div>
+            </div>
+            <div class="skill-bar-item" data-percent="72">
+              <div class="skill-info">
+                <span class="skill-name">Tableau</span>
+                <span class="skill-percent">72%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill" style="--target: 72%"></div></div>
+            </div>
+            <div class="skill-bar-item" data-percent="85">
+              <div class="skill-info">
+                <span class="skill-name">Visual Studio Code</span>
+                <span class="skill-percent">85%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill" style="--target: 85%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tools & Libraries -->
+        <div class="skills-category reveal-up" style="--delay: 0.2s">
+          <h3 class="category-title">
+            <span class="cat-icon">📦</span> Tools & Libraries
+          </h3>
+          <div class="skill-icons-grid">
+            <div class="skill-icon-item" title="Python">
+              <div class="skill-icon-box">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
+              </div>
+              <span>Python</span>
+            </div>
+            <div class="skill-icon-item" title="Pandas">
+              <div class="skill-icon-box">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas" />
+              </div>
+              <span>Pandas</span>
+            </div>
+            <div class="skill-icon-item" title="NumPy">
+              <div class="skill-icon-box">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy" />
+              </div>
+              <span>NumPy</span>
+            </div>
+            <div class="skill-icon-item" title="SQL">
+              <div class="skill-icon-box">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="SQL" />
+              </div>
+              <span>SQL</span>
+            </div>
+            <div class="skill-icon-item" title="Git">
+              <div class="skill-icon-box">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
+              </div>
+              <span>Git</span>
+            </div>
+            <div class="skill-icon-item" title="Jupyter">
+              <div class="skill-icon-box">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" alt="Jupyter" />
+              </div>
+              <span>Jupyter</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Soft Skills -->
+        <div class="skills-category reveal-up" style="--delay: 0.3s">
+          <h3 class="category-title">
+            <span class="cat-icon">🤝</span> Soft Skills
+          </h3>
+          <div class="soft-skills-list">
+            <div class="soft-skill-item">
+              <span class="soft-skill-icon">🔍</span>
+              <span class="soft-skill-name">Pemecahan Masalah Analitis</span>
+            </div>
+            <div class="soft-skill-item">
+              <span class="soft-skill-icon">👥</span>
+              <span class="soft-skill-name">Kerja Sama Tim</span>
+            </div>
+            <div class="soft-skill-item">
+              <span class="soft-skill-icon">⏰</span>
+              <span class="soft-skill-name">Manajemen Waktu</span>
+            </div>
+            <div class="soft-skill-item">
+              <span class="soft-skill-icon">🔄</span>
+              <span class="soft-skill-name">Mudah Beradaptasi</span>
+            </div>
+            <div class="soft-skill-item">
+              <span class="soft-skill-icon">📚</span>
+              <span class="soft-skill-name">Cepat Belajar</span>
+            </div>
+            <div class="soft-skill-item">
+              <span class="soft-skill-icon">🎯</span>
+              <span class="soft-skill-name">Bekerja Mandiri & Tim</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EDUCATION SECTION ===== -->
+  <section id="education" class="education-section section">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">04. Education</span>
+        <h2 class="section-title">Riwayat <span class="gradient-text">Pendidikan</span></h2>
+      </div>
+      <div class="education-grid">
+
+        <!-- Formal Education -->
+        <div class="edu-card reveal-up">
+          <div class="edu-card-icon">🎓</div>
+          <div class="edu-card-content">
+            <div class="edu-card-header">
+              <h3 class="edu-title">Sarjana Sistem Informasi</h3>
+              <span class="edu-badge">Formal</span>
+            </div>
+            <p class="edu-institution">Universitas Gunadarma, Depok</p>
+            <p class="edu-period">2022 – 2026 &nbsp;|&nbsp; <strong class="gradient-text">IPK: 3.83 / 4.00</strong></p>
+            <p class="edu-desc">Mempelajari berbagai aspek Sistem Informasi meliputi pengelolaan database, pemrograman, analisis dan perancangan sistem, proses bisnis, jaringan komputer, serta penerapan teknologi informasi dalam mendukung kebutuhan organisasi.</p>
+            <ul class="edu-highlights">
+              <li>Mengikuti praktikum dan proyek akademik: pengembangan aplikasi, perancangan database, pemrograman, jaringan komputer, dan analisis kebutuhan sistem.</li>
+              <li>Mempelajari keterkaitan teknologi dan proses bisnis melalui analisis sistem, manajemen bisnis, pengembangan SI, serta pengolahan dan analisis data.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Non-Formal Education -->
+        <div class="edu-card reveal-up" style="--delay: 0.15s">
+          <div class="edu-card-icon">🤖</div>
+          <div class="edu-card-content">
+            <div class="edu-card-header">
+              <h3 class="edu-title">Machine Learning – Studi Independen</h3>
+              <span class="edu-badge">Non Formal</span>
+            </div>
+            <p class="edu-institution">Asah by Dicoding &nbsp;|&nbsp; Remote</p>
+            <p class="edu-period">Agustus 2025 – Januari 2026</p>
+            <p class="edu-desc">Program studi independen intensif berfokus pada penerapan Machine Learning untuk analisis data skala besar.</p>
+            <ul class="edu-highlights">
+              <li><strong>Data Processing & Engineering:</strong> Mengolah dataset skala besar, pembersihan data, dan menangani missing values untuk memastikan kualitas database.</li>
+              <li><strong>Analisis Data Statistik:</strong> Menerapkan EDA untuk mengidentifikasi tren dan pola yang mendukung keputusan berbasis data.</li>
+              <li><strong>Penerapan ML:</strong> Menggunakan algoritma Machine Learning yang mengasah kemampuan logika dan ketelitian.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section id="contact" class="contact-section section">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">05. Contact</span>
+        <h2 class="section-title">Let's <span class="gradient-text">Connect</span></h2>
+        <p class="section-subtitle">Tertarik untuk berkolaborasi atau punya peluang menarik? Jangan ragu untuk menghubungi saya!</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info reveal-left">
+          <div class="contact-card">
+            <div class="contact-card-icon">📧</div>
+            <h3>Email</h3>
+            <p>muhamadrazifakbar@gmail.com</p>
+            <a href="mailto:muhamadrazifakbar@gmail.com" class="contact-link">Kirim Email →</a>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card-icon">💼</div>
+            <h3>LinkedIn</h3>
+            <p>Connect secara profesional</p>
+            <a href="https://www.linkedin.com/in/razif-akbar/" target="_blank" rel="noopener" class="contact-link">Lihat Profil →</a>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card-icon">🐱</div>
+            <h3>GitHub</h3>
+            <p>Lihat kode dan proyek saya</p>
+            <a href="https://github.com/Raziffff" target="_blank" rel="noopener" class="contact-link">@Raziffff →</a>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card-icon">📱</div>
+            <h3>Phone</h3>
+            <p>081513983136</p>
+            <a href="tel:+6281513983136" class="contact-link">Hubungi →</a>
+          </div>
+        </div>
+        <div class="contact-form-wrapper reveal-right">
+          <form class="contact-form" id="contact-form" novalidate>
+            <div class="form-group">
+              <label for="contact-name">Nama Anda</label>
+              <input type="text" id="contact-name" name="name" placeholder="John Doe" required />
+            </div>
+            <div class="form-group">
+              <label for="contact-email">Email Anda</label>
+              <input type="email" id="contact-email" name="email" placeholder="john@example.com" required />
+            </div>
+            <div class="form-group">
+              <label for="contact-subject">Subjek</label>
+              <input type="text" id="contact-subject" name="subject" placeholder="Kolaborasi / Peluang Kerja" />
+            </div>
+            <div class="form-group">
+              <label for="contact-message">Pesan</label>
+              <textarea id="contact-message" name="message" rows="5" placeholder="Halo Razif, saya ingin mendiskusikan..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full" id="form-submit-btn">
+              <span>Kirim Pesan</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <p class="footer-text">
+          Designed & Built by <span class="gradient-text">Muhamad Razif Akbar</span>
+        </p>
+        <p class="footer-sub">Turning Data Into Insight ✨</p>
+        <div class="footer-links">
+          <a href="https://github.com/Raziffff" target="_blank" rel="noopener">GitHub</a>
+          <span>·</span>
+          <a href="https://www.linkedin.com/in/razif-akbar/" target="_blank" rel="noopener">LinkedIn</a>
+          <span>·</span>
+          <a href="mailto:muhamadrazifakbar@gmail.com">Email</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>
