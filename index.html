@@ -115,35 +115,118 @@
       </div>
     </div>
     <div class="hero-visual reveal-right">
-      <div class="hero-card-wrapper">
-        <div class="hero-card">
-          <div class="card-header">
-            <div class="card-dots">
-              <span class="dot red"></span>
-              <span class="dot yellow"></span>
-              <span class="dot green"></span>
+      <div class="dataviz-wrapper">
+
+        <!-- ── Dashboard Card ── -->
+        <div class="dataviz-card">
+
+          <!-- Header -->
+          <div class="dv-header">
+            <div class="dv-header-left">
+              <span class="dv-dot red"></span>
+              <span class="dv-dot yellow"></span>
+              <span class="dv-dot green"></span>
             </div>
-            <span class="card-filename">data_analysis.py</span>
+            <span class="dv-title">Analytics Dashboard</span>
+            <span class="dv-live"><span class="dv-live-dot"></span>Live</span>
           </div>
-          <div class="card-code">
-            <div class="code-line"><span class="code-import">import</span> <span class="code-module">pandas</span> <span class="code-import">as</span> <span class="code-module">pd</span></div>
-            <div class="code-line"><span class="code-import">import</span> <span class="code-module">numpy</span> <span class="code-import">as</span> <span class="code-module">np</span></div>
-            <div class="code-line"><span class="code-import">from</span> <span class="code-module">sklearn</span> <span class="code-import">import</span> <span class="code-func">preprocessing</span></div>
-            <div class="code-line">&nbsp;</div>
-            <div class="code-line"><span class="code-comment"># Load & validate data</span></div>
-            <div class="code-line"><span class="code-var">df</span> = pd.<span class="code-func">read_csv</span>(<span class="code-str">'dataset.csv'</span>)</div>
-            <div class="code-line"><span class="code-var">df</span>.<span class="code-func">dropna</span>(<span class="code-var">inplace</span>=<span class="code-module">True</span>)</div>
-            <div class="code-line">&nbsp;</div>
-            <div class="code-line"><span class="code-comment"># EDA — explore trends</span></div>
-            <div class="code-line"><span class="code-var">summary</span> = <span class="code-var">df</span>.<span class="code-func">describe</span>()</div>
-            <div class="code-line"><span class="code-var">corr</span> = <span class="code-var">df</span>.<span class="code-func">corr</span>()</div>
-            <div class="code-line"><span class="code-func">print</span>(<span class="code-str">f'Records: <span class="code-var">{len(df)}</span>'</span>)</div>
+
+          <!-- KPI Row -->
+          <div class="dv-kpi-row">
+            <div class="dv-kpi">
+              <span class="dv-kpi-val gradient-text">48.2K</span>
+              <span class="dv-kpi-label">Records</span>
+              <span class="dv-kpi-badge up">▲ 12%</span>
+            </div>
+            <div class="dv-kpi">
+              <span class="dv-kpi-val gradient-text">94.7%</span>
+              <span class="dv-kpi-label">Accuracy</span>
+              <span class="dv-kpi-badge up">▲ 3%</span>
+            </div>
+            <div class="dv-kpi">
+              <span class="dv-kpi-val gradient-text">1.3s</span>
+              <span class="dv-kpi-label">Query Time</span>
+              <span class="dv-kpi-badge down">▼ 8%</span>
+            </div>
           </div>
-          <div class="card-output">
-            <span class="output-label">Output:</span>
-            <span class="output-text typewriter-output" id="output-text">Records: 48,291 ✓</span>
+
+          <!-- Charts Row -->
+          <div class="dv-charts-row">
+
+            <!-- Bar Chart -->
+            <div class="dv-chart-box">
+              <span class="dv-chart-label">Monthly Trend</span>
+              <div class="dv-bar-chart">
+                <div class="dv-bar-group">
+                  <div class="dv-bar" style="--h:55%; --delay:0.1s"></div>
+                  <span class="dv-bar-tick">Jan</span>
+                </div>
+                <div class="dv-bar-group">
+                  <div class="dv-bar" style="--h:72%; --delay:0.2s"></div>
+                  <span class="dv-bar-tick">Feb</span>
+                </div>
+                <div class="dv-bar-group">
+                  <div class="dv-bar" style="--h:63%; --delay:0.3s"></div>
+                  <span class="dv-bar-tick">Mar</span>
+                </div>
+                <div class="dv-bar-group">
+                  <div class="dv-bar" style="--h:88%; --delay:0.4s"></div>
+                  <span class="dv-bar-tick">Apr</span>
+                </div>
+                <div class="dv-bar-group">
+                  <div class="dv-bar" style="--h:78%; --delay:0.5s"></div>
+                  <span class="dv-bar-tick">May</span>
+                </div>
+                <div class="dv-bar-group">
+                  <div class="dv-bar dv-bar-accent" style="--h:95%; --delay:0.6s"></div>
+                  <span class="dv-bar-tick">Jun</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Donut Chart -->
+            <div class="dv-chart-box">
+              <span class="dv-chart-label">Distribution</span>
+              <div class="dv-donut-wrap">
+                <svg class="dv-donut" viewBox="0 0 80 80">
+                  <circle class="dv-donut-bg" cx="40" cy="40" r="28" />
+                  <circle class="dv-donut-seg seg1" cx="40" cy="40" r="28"
+                    stroke-dasharray="52.8 123.2" stroke-dashoffset="0" />
+                  <circle class="dv-donut-seg seg2" cx="40" cy="40" r="28"
+                    stroke-dasharray="36.9 139.1" stroke-dashoffset="-52.8" />
+                  <circle class="dv-donut-seg seg3" cx="40" cy="40" r="28"
+                    stroke-dasharray="33.3 142.7" stroke-dashoffset="-89.7" />
+                </svg>
+                <div class="dv-donut-center">
+                  <span class="dv-donut-pct">100%</span>
+                </div>
+              </div>
+              <div class="dv-legend">
+                <span class="dv-leg-item"><i class="leg-c1"></i>SQL</span>
+                <span class="dv-leg-item"><i class="leg-c2"></i>Python</span>
+                <span class="dv-leg-item"><i class="leg-c3"></i>BI</span>
+              </div>
+            </div>
+
           </div>
+
+          <!-- Line / Sparkline -->
+          <div class="dv-sparkline-box">
+            <span class="dv-chart-label">Data Quality Score</span>
+            <svg class="dv-sparkline" viewBox="0 0 260 50" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="sparkGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.4"/>
+                  <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <path class="dv-spark-fill" d="M0,38 C20,35 40,30 60,28 C80,26 100,32 120,22 C140,12 160,18 180,14 C200,10 220,6 260,8 L260,50 L0,50 Z" fill="url(#sparkGrad)" />
+              <path class="dv-spark-line" d="M0,38 C20,35 40,30 60,28 C80,26 100,32 120,22 C140,12 160,18 180,14 C200,10 220,6 260,8" />
+            </svg>
+          </div>
+
         </div>
+
         <!-- Floating badges -->
         <div class="float-badge badge-python">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" width="22" height="22" />
@@ -156,6 +239,7 @@
         <div class="float-badge badge-ml">
           <span>📊</span> Power BI
         </div>
+
       </div>
     </div>
     <div class="scroll-indicator">
