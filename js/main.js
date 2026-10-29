@@ -393,13 +393,21 @@ function initCounters() {
       if (entry.isIntersecting) {
         const el = entry.target;
         const target = parseInt(el.dataset.count);
+        const decimals = parseInt(el.dataset.decimal || '0');
         const duration = 1800;
         const start = performance.now();
 
         const animate = (now) => {
           const progress = Math.min((now - start) / duration, 1);
           const eased = 1 - Math.pow(1 - progress, 3);
-          el.textContent = Math.round(eased * target);
+          const value = eased * target;
+          if (decimals > 0) {
+            // Format with decimal point, e.g. 383 -> 3.83
+            const divisor = Math.pow(10, decimals);
+            el.textContent = (value / divisor).toFixed(decimals);
+          } else {
+            el.textContent = Math.round(value);
+          }
           if (progress < 1) requestAnimationFrame(animate);
         };
 
