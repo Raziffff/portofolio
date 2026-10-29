@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollProgress();
   initNavbar();
   initThemeToggle();
-  initTyping();
   initScrollReveal();
   initSkillBars();
   initCounters();
